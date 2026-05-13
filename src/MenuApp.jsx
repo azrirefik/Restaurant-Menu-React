@@ -57,11 +57,19 @@ function MenuApp() {
             onItemOrder={handleItemOrder} 
           />
 
-      <MenuCategory 
-        categoryName="Desserts" 
-        items={desserts} 
-        onItemOrder={handleItemOrder} 
-      />
+          <MenuCategory 
+            categoryName="Desserts" 
+            items={desserts} 
+            onItemOrder={handleItemOrder} 
+          />
+
+          <MenuCategory 
+            categoryName="Drinks" 
+            items={drinks} 
+            onItemOrder={handleItemOrder} 
+          />
+        </div>
+      </div>
     </div>
   );
 }
