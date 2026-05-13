@@ -24,6 +24,11 @@ function MenuApp() {
     { id: 6, name: "Tiramisu", price: 8.0, description: "Traditional coffee cake" }
   ];
 
+  const drinks = [
+    { id: 7, name: "Teh Tarik", price: 3.0, description: "Classic Malaysian pulled tea" },
+    { id: 8, name: "Iced Milo", price: 4.5, description: "Chocolate malt drink" }
+  ];
+
   const handleItemOrder = (itemName, price) => {
     alert(`Order received: ${itemName} for $${price.toFixed(2)}`);
     console.log("Processing order for:", itemName);
@@ -52,19 +57,11 @@ function MenuApp() {
             onItemOrder={handleItemOrder} 
           />
 
-          <MenuCategory 
-            categoryName="Desserts" 
-            items={desserts} 
-            onItemOrder={handleItemOrder} 
-          />
-
-          <MenuCategory 
-            categoryName="Drinks" 
-            items={drinks} 
-            onItemOrder={handleItemOrder} 
-          />
-        </div>
-      </div>
+      <MenuCategory 
+        categoryName="Desserts" 
+        items={desserts} 
+        onItemOrder={handleItemOrder} 
+      />
     </div>
   );
 }
