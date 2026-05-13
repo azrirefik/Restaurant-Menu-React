@@ -30,33 +30,41 @@ function MenuApp() {
   };
 
   return (
-    <div className="menu-app app-container">
-      <RestaurantHeader 
-        restaurantName={restaurantInfo.name}
-        tagline={restaurantInfo.tagline}
-        cuisine={restaurantInfo.cuisine}
-        rating={restaurantInfo.rating}
-      />
+    <div className="min-h-screen bg-base-200 py-10 px-4">
+      <div className="max-w-5xl mx-auto space-y-12">
+        <RestaurantHeader 
+          restaurantName={restaurantInfo.name}
+          tagline={restaurantInfo.tagline}
+          cuisine={restaurantInfo.cuisine}
+          rating={restaurantInfo.rating}
+        />
 
-      <hr />
+        <div className="grid gap-8">
+          <MenuCategory 
+            categoryName="Appetizers" 
+            items={appetizers} 
+            onItemOrder={handleItemOrder} 
+          />
 
-      <MenuCategory 
-        categoryName="Appetizers" 
-        items={appetizers} 
-        onItemOrder={handleItemOrder} 
-      />
+          <MenuCategory 
+            categoryName="Main Courses" 
+            items={mains} 
+            onItemOrder={handleItemOrder} 
+          />
 
-      <MenuCategory 
-        categoryName="Main Courses" 
-        items={mains} 
-        onItemOrder={handleItemOrder} 
-      />
+          <MenuCategory 
+            categoryName="Desserts" 
+            items={desserts} 
+            onItemOrder={handleItemOrder} 
+          />
 
-      <MenuCategory 
-        categoryName="Desserts" 
-        items={desserts} 
-        onItemOrder={handleItemOrder} 
-      />
+          <MenuCategory 
+            categoryName="Drinks" 
+            items={drinks} 
+            onItemOrder={handleItemOrder} 
+          />
+        </div>
+      </div>
     </div>
   );
 }
